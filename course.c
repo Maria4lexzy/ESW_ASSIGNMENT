@@ -21,7 +21,7 @@ int get_course_numb(course_t self) {
 int get_semester_num(course_t self) {
 
 }
-char* ge_course_name(course_t self) {
+char* get_course_name(course_t self) {
 
 }
 course_t get_nextCourse_address(course_t self) {

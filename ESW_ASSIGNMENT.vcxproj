@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="assignment.c" />
     <ClCompile Include="course.c" />
+    <ClCompile Include="student.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
