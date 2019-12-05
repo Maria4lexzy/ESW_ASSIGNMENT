@@ -27,6 +27,9 @@
     <ClInclude Include="assignment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="student_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assignment.c">
@@ -36,6 +39,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="student.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="student_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="teacher.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
