@@ -30,6 +30,9 @@
     <ClInclude Include="student_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enrollment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assignment.c">
@@ -45,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="teacher.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enrollment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
