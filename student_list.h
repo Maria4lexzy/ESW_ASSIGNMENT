@@ -1,22 +1,22 @@
 #pragma once
 #include "student.h"
+#include "stdint.h"
+struct student_list
+{
+	void* student;
+	student_list_node* next;
+};
+typedef struct student_list student_list_node;
 
-typedef struct student_list* pstudent_list_t;
 
-struct student_list_t{
-   //plist_t list;
-} student_list_t;
-pstudent_list_t student_list_create();
+void* get_student_from_list(uint16_t index);
 
-pstudent_t get_student_from_list(pstudent_list_t self, int i);
+int no_of_students();
 
-int no_of_students(pstudent_list_t self);
+int remove_student_from_list(void* student);
 
-int remove_student_from_list(pstudent_list_t self, pstudent_t student);
+int add_student_to_list(void* student);
 
-int add_student_to_list(pstudent_list_t self, pstudent_t student);
-
-void student_list_destroy(pstudent_list_t self);
 
 
 

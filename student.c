@@ -1,25 +1,35 @@
 #include <stdio.h>
 #include "student.h"
 
-
-pstudent_t create_student(int student_num, char* first_name) {
-	pstudent_t student = (pstudent_t)malloc(sizeof(student_t));
+//creating student - return 0 if success, else -1
+pstudent_t* create_student(int student_num, char* first_name) {
+	pstudent_t* student = (pstudent_t*)malloc(sizeof(pstudent_t));
 	if (student == NULL) {
 		return NULL;
 	}
 	else {
-		student->student_ = student_no;
-		student->f_name = strdup(f_name);
+		student->student_num = student_num;
+		student->first_name = first_name;
 		return student;
 	}
 }
-int get_student_numb(student_t self) {
+int get_student_numb(pstudent_t self) 
+{
+	return self.student_num;
 }
 
-char* get_student_name(student_t self) {
+char* get_student_name(pstudent_t self) 
+{
+	return self.first_name;
 }
-void destroy_student(student_t self) {
+
+void destroy_student(pstudent_t* self) 
+{
+	free(self);
+	self = NULL;
 }
-//we maybe need this
-student_t get_next_student_address(student_t self) {}
-void set_next_student_address(student_t self, student_t next) {}
+
+void print_student_info(pstudent_t self) {
+
+	printf("S \t %s\t %d\n", self.student_num, self.first_name);
+}
