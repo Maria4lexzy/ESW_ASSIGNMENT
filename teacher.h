@@ -1,6 +1,7 @@
 #pragma once
 #include <stdlib.h>
 #include <stdio.h>
+#include <malloc.h>
 typedef struct teacher_t* pteacher_t;
 typedef struct teacher_t {
 	int teacher_no;
