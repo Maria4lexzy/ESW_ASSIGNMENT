@@ -3,7 +3,7 @@
 
 typedef struct student_list* pstudent_list_t;
 
-typedef struct student_list_t{
+struct student_list_t{
    //plist_t list;
 } student_list_t;
 pstudent_list_t student_list_create();
