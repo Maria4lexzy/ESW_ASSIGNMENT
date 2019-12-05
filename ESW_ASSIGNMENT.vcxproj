@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="course.h" />
     <ClInclude Include="enrollment.h" />
+    <ClInclude Include="read_data.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="student_list.h" />
     <ClInclude Include="teacher.h" />
@@ -135,9 +136,13 @@
     <ClCompile Include="course.c" />
     <ClCompile Include="enrollment.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="read_data.c" />
     <ClCompile Include="student.c" />
     <ClCompile Include="student_list.c" />
     <ClCompile Include="teacher.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="course_database.Txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
