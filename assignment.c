@@ -1,24 +1,21 @@
 #include <stdio.h>
 #include "assignment.h"
 #include <malloc.h>
+#include "course.h"
+#include "teacher.h"
 
-struct assignment{
-int teacher_num;
-int course_num;
-assignment_t next; };
 
-// Constructor
-assignment_t create_assignment(int teacher_number, int course_number) {
-	assignment_t new_assignment = (assignment_t)malloc(sizeof(struct assignment));
 
+passignment_t create_assignment(pcourse_t course, pteacher_t teacher){}
+void destroy_assignment(passignment_t assignment){}
+void set_assignment_course(passignment_t assignment, course_t* course){}
+void set_assignment_teacher(passignment_t assignment, teacher_t* teacher){}
+pcourse_t get_assignment_course(passignment_t assignment){}
+pteacher_t get_assignment_teacher(passignment_t assignment) {
+	
 }
-
-void destroy_assignment(assignment_t self) {}
-
-int get_assigned_teacher_num(assignment_t self) {}
-
-int get_assigned_course_num(assignment_t self) {}
-assignment_t getNextAssignmentAddress(assignment_t self) {}
-void setNexAddress(assignment_t self, assignment_t next) {}
+void print_assignment_info(passignment_t assignment){
+	printf("A \t %d\t %d\n", assignment->teacher->teacher_num ,assignment->course->course_num);
+}
 
 

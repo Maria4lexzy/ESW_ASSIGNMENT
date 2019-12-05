@@ -1,13 +1,19 @@
 #pragma once
 #include <stdlib.h>
 #include <stdio.h>
+typedef struct student_t* pstudent_t;
 
-typedef struct student* student_t;
+struct student {
+	int student_num;
+	int first_name;
 
-student_t create_student(int student_num, char* first_name);
-int get_student_numb(student_t s_num);
-char* get_student_name(student_t s_name);
-void destroy_student(student_t student);
+}student_t;
+
+pstudent_t create_student(int student_num, char* self);
+int get_student_numb(pstudent_t self);
+char* get_student_name(pstudent_t self);
+void destroy_student(pstudent_t self);
 //we maybe need this
-student_t get_next_student_address(student_t self);
-void set_next_student_address(student_t self, student_t next);
+pstudent_t get_next_student_address(pstudent_t self);
+void set_next_student_addressp(pstudent_t self, pstudent_t next);
+void print_student_info(pstudent_t student);

@@ -1,20 +1,24 @@
 #include <stdio.h>
 #include "student.h"
-struct student {
-	int student_num;
-int first_name;
-student_t next;
-};
 
-student_t create_student(int student_num, char* first_name) {
 
+pstudent_t create_student(int student_num, char* first_name) {
+	pstudent_t student = (pstudent_t)malloc(sizeof(student_t));
+	if (student == NULL) {
+		return NULL;
+	}
+	else {
+		student->student_ = student_no;
+		student->f_name = strdup(f_name);
+		return student;
+	}
 }
-int get_student_numb(student_t s_num) {
+int get_student_numb(student_t self) {
 }
 
-char* get_student_name(student_t s_name) {
+char* get_student_name(student_t self) {
 }
-void destroy_student(student_t student) {
+void destroy_student(student_t self) {
 }
 //we maybe need this
 student_t get_next_student_address(student_t self) {}
