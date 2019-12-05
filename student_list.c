@@ -19,9 +19,36 @@ int getStudentListSize() {
 		return 0;
 }
 
-void* get_student_from_list(uint16_t index)
+void* get_student_by_index(uint16_t index)
 {
-	
+	if (number_of_nodes && index >= 0 && index < number_of_nodes)
+	{
+		student_list_node* headTemp = head;				// starting from first node
+		if (index == 0)
+			return headTemp;
+		else
+			for (uint16_t i = 0; i < index; i++)
+				headTemp = headTemp->next;	// moving to next node
+
+		return headTemp;							// returning wanted item
+	}
+	return NULL;
+}
+
+void* get_student_by_stuent_number(void* student)
+{
+	if (number_of_nodes >= 0 && student != NULL)
+	{
+		student_list_node* headTemp = head;				// starting from first node
+
+		for (uint16_t i = 0; i < number_of_nodes; i++)
+		{
+			if (((pstudent_t*)headTemp->student)->student_num == ((pstudent_t*)student)->student_num) //check if student numbers match
+				return headTemp->student;
+			headTemp = headTemp->next;
+		}
+	}
+	return NULL;
 }
 
 int no_of_students()

@@ -9,7 +9,9 @@ struct student_list
 typedef struct student_list student_list_node;
 
 
-void* get_student_from_list(uint16_t index);
+void* get_student_by_index(uint16_t index);
+
+void* get_student_by_stuent_number(void* student);
 
 int no_of_students();
 
