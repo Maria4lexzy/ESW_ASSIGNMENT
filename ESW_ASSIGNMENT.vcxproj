@@ -130,6 +130,7 @@
     <ClInclude Include="student_list.h" />
     <ClInclude Include="teacher.h" />
     <ClInclude Include="assignment.h" />
+    <ClInclude Include="teacher_list.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assignment.c" />
@@ -140,6 +141,7 @@
     <ClCompile Include="student.c" />
     <ClCompile Include="student_list.c" />
     <ClCompile Include="teacher.c" />
+    <ClCompile Include="teacher_list.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="course_database.Txt" />
