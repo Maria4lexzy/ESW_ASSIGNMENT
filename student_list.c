@@ -21,6 +21,8 @@ void printStudentList() {
 		tempP = (student_list_node*)(tempP->next);	//shifting to the next node in the linked list
 		temp_no_of_nodes--;
 	}
+	free(tempP);
+	tempP = NULL;
 	printf(")\n");
 }
 
@@ -101,34 +103,34 @@ int add_student_to_list(pstudent_t* student_value)
 	else
 		return -1;
 }
+
 int remove_student_from_list(pstudent_t* student_value)
 {
 	student_list_node* new_node = (student_list_node*)malloc(sizeof(student_list_node));
-
+	student_list_node* headTemp = head;
 	if (student_value == NULL)
 		return -1;
 
 	/* if the node is the first node */
-	if (item == head)
+	if (headTemp->el_student->student_num == student_value->student_num)
 		return remove_first(head);
 
-	/* if the node is the last node */
-	if (((element*)item)->next == NULL)
-		return remove_last(head);
-
 	/* if the node is in the middle */
-	element* cursor = head;
-	while (cursor != NULL)
+	while (headTemp != NULL)
 	{
-		if (cursor->next == ((element*)item))
+		if (headTemp->el_student->student_num == student_value->student_num)
 			break;
-		cursor = cursor->next;
+		headTemp = headTemp->next;
 	}
 
-	if (cursor != NULL)
+	/* if the node is the last node */
+	if (headTemp->next == NULL)
+		return remove_last(head);
+
+	if (headTemp != NULL)
 	{
-		element* tmp = cursor->next;
-		cursor->next = tmp->next;
+		student_list_node* tmp = headTemp->next;
+		headTemp->next = tmp->next;
 		tmp->next = NULL;
 		free(tmp);
 	}
@@ -136,11 +138,11 @@ int remove_student_from_list(pstudent_t* student_value)
 	return 0;
 }
 //remove node from the front of list(return 0 if succes, else -1)
-int remove_first(element* headValue)
+int remove_first(student_list_node* headValue)
 {
 	if (headValue == NULL)
 		return NULL;
-	element* front = headValue;
+	student_list_node* front = headValue;
 	headValue = headValue->next;
 	front->next = NULL;
 	if (front == headValue)//check if it is the last node in the list
@@ -154,12 +156,12 @@ int remove_first(element* headValue)
 }
 
 //remove node from the back of the list(return 0 if succes, else -1)
-int remove_last(element* headValue)
+int remove_last(student_list_node* headValue)
 {
 	if (headValue == NULL)
 		return -1;
-	element* cursor = headValue;
-	element* back = NULL;
+	student_list_node* cursor = headValue;
+	student_list_node* back = NULL;
 	while (cursor->next != NULL)
 	{
 		back = cursor;

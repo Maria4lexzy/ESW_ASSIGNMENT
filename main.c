@@ -13,6 +13,7 @@ void main() {
 
 	//adding student
 	add_student_to_list(create_student(123456, "Jakub"));
+	add_student_to_list(create_student(723456, "Feri"));
 
 	//checking functionality
 	printStudentList(); //printing out all items from the linkedList
@@ -20,6 +21,11 @@ void main() {
 	printf("0 POS: %d   %s ", student_val->student_num,student_val->first_name);
 	student_val = get_student_by_stuent_number(student_val);
 	printf("0 POS: %d   %s ", student_val->student_num, student_val->first_name);
+	remove_student_from_list(student_val);
+	destroy_student(student_val);
+	printStudentList();
+
+
 
 
 }
