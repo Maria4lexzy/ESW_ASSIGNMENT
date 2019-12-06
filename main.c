@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "student.h"
 #include "student_list.h"
+#include "course.h"
+#include "course_list.h"
 
 
 void main() {
@@ -24,6 +26,24 @@ void main() {
 	remove_student_from_list(student_val);
 	destroy_student(student_val);
 	printStudentList();
+
+
+
+	//creating list course
+	int nrOfItems_course;
+	printf("Enter total number courses: ");
+	scanf_s("%d", &nrOfItems_course);
+	setCourseListSize(nrOfItems_course);
+	add_course_to_list(create_course(123456, "Jakub", 12));
+	add_course_to_list(create_course(123456, "Feri", 12));
+	//checking functionality course
+	printCourseList(); //printing out all items from the linkedList
+	/*pcourse_t* course_val = get_course_by_index(0);
+	print_course_info(course_val);
+	course_val = get_course_by_course_number(course_val);
+	print_course_info(course_val);
+	destroy_course(course_val);
+	printCourseList();*/
 
 
 
