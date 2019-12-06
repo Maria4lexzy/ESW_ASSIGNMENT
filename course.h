@@ -2,15 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct course_t* pcourse_t;
-
 typedef struct course_t {
 	//C course_number course_name semester_number
 	int course_num;
 	char* course_name;
 	int semester_num;
 	//	pcourse_t next;
-}course_t;
+};
+typedef struct course_t pcourse_t;
 
 pcourse_t createCourse(int course_num, char* course_name, int semester_no);
 void destroy_course(pcourse_t course);

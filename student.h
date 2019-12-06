@@ -1,13 +1,13 @@
 #pragma once
-#include <stdlib.h>
-#include <stdio.h>
+#include "stdint.h"
 
-typedef struct student_t pstudent_t;
+
 struct student_t {
 	int student_num;
 	char* first_name;
 
 };
+typedef struct student_t pstudent_t;
 
 pstudent_t* create_student(int student_num, char* self);
 int get_student_numb(pstudent_t self);

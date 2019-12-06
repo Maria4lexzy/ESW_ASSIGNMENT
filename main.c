@@ -1,41 +1,25 @@
 #include <stdio.h>
-#include <cstdint>
 #include "student.h"
-
+#include "student_list.h"
 
 
 void main() {
+
+	//creating list
 	int nrOfItems;
-	printf("Enter total number nodes: ");
+	printf("Enter total number students: ");
 	scanf_s("%d", &nrOfItems);
-	setListSize(nrOfItems);
-	int i = 1;
-	int elementInt;
-	element* tempCursor;
-	//setting nodes to the linked list
-	while (nrOfItems)
-	{
-		printf("Enter LinkedListObject number %d: ", i);
-		scanf_s("%d", &elementInt);
+	setStudentListSize(nrOfItems);
 
-		tempCursor = (element*)malloc(sizeof(element));
-		if (tempCursor)   															 // avoiding "warning C6011: dereferencing NULL pointer"
-		{
-			tempCursor->data = student_t;
-			addItem(tempCursor);
-		}
+	//adding student
+	add_student_to_list(create_student(123456, "Jakub"));
 
-		nrOfItems--;
-		if (nrOfItems == 0)
-			continue;
-		i++;
-	}
-	printList(); //printing out all items from the linkedList
-	printf("Test: Number of items in linked list is: %d \n", noOfItems());
-	tempCursor = getItem(0);
-	printf("Test: Item in position 0 is: %d \n", tempCursor->data);
-	removeItem(getItem(1));
-	printList();
+	//checking functionality
+	printStudentList(); //printing out all items from the linkedList
+	pstudent_t* student_val= get_student_by_index(0);
+	printf("0 POS: %d   %s ", student_val->student_num,student_val->first_name);
+	student_val = get_student_by_stuent_number(student_val);
+	printf("0 POS: %d   %s ", student_val->student_num, student_val->first_name);
 
 
 }
