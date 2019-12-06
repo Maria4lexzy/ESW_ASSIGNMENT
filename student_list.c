@@ -94,7 +94,7 @@ int add_student_to_list(pstudent_t* student_value)
 		new_node->el_student = student_value;
 		new_node->next = NULL;
 		current->next = new_node;					// set previous item in the linkedList point to the newely created item
-		current = (student_list_node*)current->next;
+		current = current->next;
 		current->next = NULL;						// we move the permanent pointer to the newely created item in the linked list										
 		number_of_nodes++;
 
