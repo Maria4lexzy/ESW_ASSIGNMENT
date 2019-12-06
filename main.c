@@ -16,7 +16,14 @@ void main() {
 	setStudentListSize(nrOfItems);
 	
 	//creating teacher list
-	set_teacher_list_size(nrOfItems);
+	int nrOfItems_teacher;
+	//creating student list
+
+	printf("Enter total number students: ");
+	scanf_s("%d", &nrOfItems_teacher);
+	setStudentListSize(nrOfItems_teacher);
+
+	set_teacher_list_size(nrOfItems_teacher);
 	//adding student
 	add_student_to_list(create_student(123461, "Jakub"));
 	add_student_to_list(create_student(723462, "Feri"));
