@@ -5,7 +5,8 @@
 #include <stdlib.h>
 
 //creating student - return 0 if success, else -1
-pstudent_t* create_student(int student_num, char* first_name) {
+pstudent_t* create_student(int student_num, char* first_name) 
+{
 	pstudent_t* studentV = ((pstudent_t*)malloc(sizeof(pstudent_t)));
 	if (studentV == NULL) {
 		return NULL;
@@ -32,7 +33,7 @@ void destroy_student(pstudent_t* self)
 	self = NULL;
 }
 
-void print_student_info(pstudent_t self) {
-
-	//printf("S \t %d\t %s\n", self.student_num, self.first_name);
+void print_student_info(pstudent_t* self) 
+{
+	printf("S \t %d\t %s\n", self->student_num, self->first_name);
 }

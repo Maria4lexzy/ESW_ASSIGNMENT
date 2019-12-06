@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="course.h" />
+    <ClInclude Include="course_list.h" />
     <ClInclude Include="enrollment.h" />
     <ClInclude Include="read_data.h" />
     <ClInclude Include="student.h" />
@@ -134,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="assignment.c" />
     <ClCompile Include="course.c" />
+    <ClCompile Include="course_list.c" />
     <ClCompile Include="enrollment.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="read_data.c" />

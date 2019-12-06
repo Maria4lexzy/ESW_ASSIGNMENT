@@ -36,6 +36,9 @@
     <ClInclude Include="read_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="course_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assignment.c">
@@ -60,6 +63,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="read_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="course_list.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
