@@ -3,22 +3,22 @@
 #include <malloc.h>
 #include "student.h"
 
-student_list_node* head = NULL;
-student_list_node* current = NULL;
+p_student_list_node head = NULL;
+p_student_list_node current = NULL;
 uint16_t number_of_nodes = 0;
 uint16_t list_size = 0;
 
 void printStudentList() {
 
-	student_list_node* tempP = (student_list_node*)malloc(sizeof(student_list_node));
+	p_student_list_node tempP = (p_student_list_node)malloc(sizeof(student_list_t));
 	tempP = head;
 	printf("The list contains: (");
 	int temp_no_of_nodes = number_of_nodes;
 	while (tempP && temp_no_of_nodes > 0)
 	{
-		pstudent_t* student_value = (student_list_node*)tempP->el_student;
+		pstudent_t student_value = (p_student_list_node)tempP->el_student;
 		printf("[%d \t %s]", student_value->student_num, student_value->first_name);
-		tempP = (student_list_node*)(tempP->next);	//shifting to the next node in the linked list
+		tempP = (p_student_list_node)(tempP->next);	//shifting to the next node in the linked list
 		temp_no_of_nodes--;
 	}
 	free(tempP);
@@ -37,34 +37,34 @@ int getStudentListSize() {
 		return 0;
 }
 
-pstudent_t* get_student_by_index(uint16_t index)
+pstudent_t get_student_by_index(uint16_t index)
 {
 	if (number_of_nodes && index >= 0 && index < number_of_nodes)
 	{
-		student_list_node* headTemp = head;				// starting from first node
+		p_student_list_node headTemp = head;				// starting from first node
 		if (index == 0)
 			return headTemp->el_student;
 		else
 			for (uint16_t i = 0; i < index; i++)
-				headTemp = (student_list_node *)(headTemp->next);	// moving to next node
+				headTemp = (p_student_list_node )(headTemp->next);	// moving to next node
 
 		return headTemp->el_student;							// returning wanted item
 	}
 	return NULL;
 }
 
-pstudent_t* get_student_by_stuent_number(pstudent_t* student_value )
+pstudent_t get_student_by_stuent_number(pstudent_t student_value )
 {
 	if (number_of_nodes >= 0 && student_value != NULL)
 	{
-		student_list_node* headTemp = head;				// starting from first node
+		p_student_list_node headTemp = head;				// starting from first node
 
 		for (uint16_t i = 0; i < number_of_nodes; i++)
 		{
 			if (headTemp->el_student->student_num == student_value->student_num) //check if student numbers match
 				return headTemp->el_student;
 
-			headTemp = (student_list_node*)headTemp->next;
+			headTemp = (p_student_list_node)headTemp->next;
 		}
 	}
 	return NULL;
@@ -75,9 +75,9 @@ int no_of_students()
 	return number_of_nodes;
 }
 
-int add_student_to_list(pstudent_t* student_value)
+int add_student_to_list(pstudent_t student_value)
 {
-	student_list_node* new_node = (student_list_node*)malloc(sizeof(student_list_node));
+	p_student_list_node new_node = (p_student_list_node)malloc(sizeof(student_list_t));
 	if (student_value == NULL)
 		return -1;
 	else if (!number_of_nodes && list_size >= 1 && new_node)	// if no items in the linked list exists then we create the first one which has a special process different from the others to follow
@@ -104,10 +104,10 @@ int add_student_to_list(pstudent_t* student_value)
 		return -1;
 }
 
-int remove_student_from_list(pstudent_t* student_value)
+int remove_student_from_list(pstudent_t student_value)
 {
-	student_list_node* new_node = (student_list_node*)malloc(sizeof(student_list_node));
-	student_list_node* headTemp = head;
+	p_student_list_node new_node = (p_student_list_node)malloc(sizeof(student_list_t));
+	p_student_list_node headTemp = head;
 	if (student_value == NULL)
 		return -1;
 
@@ -129,7 +129,7 @@ int remove_student_from_list(pstudent_t* student_value)
 
 	if (headTemp != NULL)
 	{
-		student_list_node* tmp = headTemp->next;
+		p_student_list_node tmp = headTemp->next;
 		headTemp->next = tmp->next;
 		tmp->next = NULL;
 		free(tmp);
@@ -138,11 +138,11 @@ int remove_student_from_list(pstudent_t* student_value)
 	return 0;
 }
 //remove node from the front of list(return 0 if succes, else -1)
-int remove_first(student_list_node* headValue)
+int remove_first(p_student_list_node headValue)
 {
 	if (headValue == NULL)
 		return NULL;
-	student_list_node* front = headValue;
+	p_student_list_node front = headValue;
 	headValue = headValue->next;
 	front->next = NULL;
 	if (front == headValue)//check if it is the last node in the list
@@ -156,12 +156,12 @@ int remove_first(student_list_node* headValue)
 }
 
 //remove node from the back of the list(return 0 if succes, else -1)
-int remove_last(student_list_node* headValue)
+int remove_last(p_student_list_node headValue)
 {
 	if (headValue == NULL)
 		return -1;
-	student_list_node* cursor = headValue;
-	student_list_node* back = NULL;
+	p_student_list_node cursor = headValue;
+	p_student_list_node back = NULL;
 	while (cursor->next != NULL)
 	{
 		back = cursor;
