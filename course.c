@@ -4,9 +4,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-pcourse_t* create_course(int course_no, char* course_name, int semester_no)
+pcourse_t create_course(int course_no, char* course_name, int semester_no)
 {
-	pcourse_t* courseV = ((pcourse_t*)malloc(sizeof(pcourse_t)));
+	pcourse_t courseV = ((pcourse_t*)malloc(sizeof(pcourse_t)));
 	if (courseV == NULL) {
 		return NULL;
 	}
@@ -18,25 +18,25 @@ pcourse_t* create_course(int course_no, char* course_name, int semester_no)
 	}
 }
 
-void destroy_course(pcourse_t* course)
+void destroy_course(pcourse_t course)
 {
 	free(course);
 	course = NULL;
 }
 
-int get_course_num(pcourse_t course)
+int get_course_num(course_t course)
 {
 	return course.course_num;
 }
-char* get_course_name(pcourse_t course)
+char* get_course_name(course_t course)
 {
 	return course.course_name;
 }
-int get_semester_num(pcourse_t course)
+int get_semester_num(course_t course)
 {
 	return course.semester_num;
 }
-void print_course_info(pcourse_t* course) 
+void print_course_info(pcourse_t course) 
 {
 	printf("T \t %d\t %s \t %d\n", course->semester_num, course->course_name, course->course_num);
 }
