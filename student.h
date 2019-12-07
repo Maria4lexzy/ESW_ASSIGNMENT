@@ -3,7 +3,7 @@
 
 
 typedef struct student_t {
-	pcourse_t course_obj;
+	//pcourse_t course_obj;
 	int student_num;
 	char* first_name;
 

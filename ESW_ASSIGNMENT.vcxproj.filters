@@ -68,10 +68,18 @@
     <ClCompile Include="read_data.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="course_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="teacher_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="course_database.Txt">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

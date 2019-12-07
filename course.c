@@ -3,7 +3,7 @@
 #include "course.h"
 #include <string.h>
 #include <stdlib.h>
-
+#include "enrollment.h"
 pcourse_t create_course(int course_no, char* course_name, int semester_no)
 {
 	pcourse_t courseV = ((pcourse_t)malloc(sizeof(course_t)));
@@ -14,9 +14,11 @@ pcourse_t create_course(int course_no, char* course_name, int semester_no)
 		courseV->course_num = course_no;
 		courseV->course_name = course_name;
 		courseV->semester_num = semester_no;
+	
 		return courseV;
 	}
 }
+
 
 void destroy_course(pcourse_t course)
 {

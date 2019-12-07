@@ -1,11 +1,13 @@
 #pragma once
 #include "stdint.h"
 #include "student.h"
-
+#include "student_list.h"
 typedef struct course_t {
+	p_student_list_node  students;
 	int course_num;
 	char* course_name;
 	int semester_num;
+	
 } course_t;
 typedef struct course_t* pcourse_t;
 
