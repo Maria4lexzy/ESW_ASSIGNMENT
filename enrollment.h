@@ -1,24 +1,16 @@
 #pragma once
-#include <stdio.h>
-#include "course.h"
 #include "student.h"
+#include "course.h"
 
+typedef struct enrolment_t* p_enrolment_t;
 
-typedef struct enrollment_t {
-	pcourse_t course;
-	pstudent_t student;
-};
-typedef struct enrollment_t p_enrollment_t;
+typedef struct enrolment_t {
+	pcourse_t* course;
+	pstudent_t* student;
+}enrolment_t;
 
-p_enrollment_t* construct_enrollment(pcourse_t course, pstudent_t student);
-void destroy_enrollment(p_enrollment_t enrolment);
-void set_enrollment_course(p_enrollment_t enrollment, pcourse_t course);
-void set_enrollment_student(p_enrollment_t enrollment, pstudent_t student);
-pcourse_t* get_course_enrollment(p_enrollment_t enrolment);
-pstudent_t* get_enrolled_student(p_enrollment_t enrolment);
-void print_enrollmentInformation(p_enrollment_t enrolment);
-void remove_enrolment_from_list(p_enrollment_t enrolment);
-void add_enrolment_to_list(p_enrollment_t enrolment);
-//maybe
-//p_list_t create_enrollment_list();
-//p_list_t get_enrollment_list();
+enrolment_t* enrol_student(pcourse_t* course, pcourse_t* student);
+void destroy_enrolment(enrolment_t* enrolment);
+pcourse_t* getCourseOfEnrolment(enrolment_t* enrolment);
+pcourse_t* getStudentOfEnrolment(enrolment_t* enrolment);
+void print_enrolment_info(enrolment_t* enrolment);
