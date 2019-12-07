@@ -2,11 +2,12 @@
 #include "course.h"
 
 
+
 typedef struct course_list_t
 {
 	pcourse_t el_course;
 	pcourse_t next_course;
-} course_list_t;
+	} course_list_t;
 typedef struct course_list_t* p_course_list_node;
 
 pcourse_t get_course_by_index(uint16_t index);

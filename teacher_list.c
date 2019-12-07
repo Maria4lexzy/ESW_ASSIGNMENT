@@ -2,29 +2,29 @@
 #include <stdio.h>
 #include "student.h"
 #include "teacher_list.h"
-teacher_list_node* head_teacher = NULL;
-teacher_list_node* current_teacher = NULL;
+p_teacher_list_node head_teacher = NULL;
+p_teacher_list_node current_teacher = NULL;
 uint16_t number_of_nodes_teacher = 0;
 uint16_t list_size_teacher = 0;
 
-pteacher_t* get_teacher_by_index(uint16_t index) {
+pteacher_t get_teacher_by_index(uint16_t index) {
 	if (number_of_nodes_teacher && index >= 0 && index < number_of_nodes_teacher)
 	{
-		teacher_list_node* headTemp = head_teacher;				// starting from first node
+		p_teacher_list_node headTemp = head_teacher;				// starting from first node
 		if (index == 0)
 			return headTemp->el_teacher;
 		else
 			for (uint16_t i = 0; i < index; i++)
-				headTemp = (teacher_list_node*)(headTemp->next_teacher);	// moving to next node
+				headTemp = (p_teacher_list_node)(headTemp->next_teacher);	// moving to next node
 
 		return headTemp->el_teacher;							// returning wanted item
 	}
 	return NULL;
 }
-pteacher_t* get_teacher_by_teacher_number(pteacher_t* teacher_value) {
+pteacher_t get_teacher_by_teacher_number(pteacher_t teacher_value) {
 	if (number_of_nodes_teacher >= 0 && teacher_value != NULL)
 	{
-		teacher_list_node* headTemp = head_teacher;				// starting from first node
+		p_teacher_list_node headTemp = head_teacher;				// starting from first node
 
 		for (uint16_t i = 0; i < number_of_nodes_teacher; i++)
 		{
@@ -32,7 +32,7 @@ pteacher_t* get_teacher_by_teacher_number(pteacher_t* teacher_value) {
 				return headTemp->el_teacher;
 				return headTemp->el_teacher;
 
-			headTemp = (teacher_list_node*)headTemp->next_teacher;
+			headTemp = (p_teacher_list_node)headTemp->next_teacher;
 		}
 	}
 }
@@ -42,10 +42,10 @@ int no_of_teachers() {
 
 }
 
-int remove_teacher_from_list(pteacher_t* teacher_value) {
+int remove_teacher_from_list(pteacher_t teacher_value) {
 
-	teacher_list_node* new_node = (teacher_list_node*)malloc(sizeof(teacher_list_node));
-	teacher_list_node* headTemp = head_teacher;
+	p_teacher_list_node new_node = (p_teacher_list_node)malloc(sizeof(teacher_list_t));
+	p_teacher_list_node headTemp = head_teacher;
 	if (teacher_value == NULL)
 		return -1;
 
@@ -67,7 +67,7 @@ int remove_teacher_from_list(pteacher_t* teacher_value) {
 
 	if (headTemp != NULL)
 	{
-		teacher_list_node* tmp = headTemp->next_teacher;
+		p_teacher_list_node tmp = headTemp->next_teacher;
 		headTemp->next_teacher = tmp->next_teacher;
 		tmp->next_teacher = NULL;
 		free(tmp);
@@ -76,9 +76,9 @@ int remove_teacher_from_list(pteacher_t* teacher_value) {
 	return 0;
 }
 
-int add_teacher_to_list(pteacher_t* teacher_value) {
+int add_teacher_to_list(pteacher_t teacher_value) {
 
-	teacher_list_node* new_node = (teacher_list_node*)malloc(sizeof(teacher_list_node));
+	p_teacher_list_node new_node = (p_teacher_list_node)malloc(sizeof(teacher_list_t));
 	if (teacher_value == NULL)
 		return -1;
 	else if (!number_of_nodes_teacher && list_size_teacher >= 1 && new_node)	// if no items in the linked list exists then we create the first one which has a special process different from the others to follow
@@ -95,7 +95,7 @@ int add_teacher_to_list(pteacher_t* teacher_value) {
 		new_node->el_teacher = teacher_value;
 		new_node->next_teacher = NULL;
 		current_teacher->next_teacher = new_node;					// set previous item in the linkedList point to the newely created item
-		current_teacher = (teacher_list_node*)current_teacher->next_teacher;
+		current_teacher = (p_teacher_list_node)current_teacher->next_teacher;
 		current_teacher->next_teacher = NULL;						// we move the permanent pointer to the newely created item in the linked list										
 		number_of_nodes_teacher++;
 
@@ -117,26 +117,26 @@ int get_teacher_list_size() {
 }
 
 void print_teacher_list() {
-	teacher_list_node* tempP = (teacher_list_node*)malloc(sizeof(teacher_list_node));
+	p_teacher_list_node tempP = (p_teacher_list_node)malloc(sizeof(teacher_list_t));
 	tempP = head_teacher;
 	printf("The list contains: (");
 	int temp_no_of_nodes = number_of_nodes_teacher;
 	while (tempP && temp_no_of_nodes > 0)
 	{
-		pteacher_t* teacher_value = (teacher_list_node*)tempP->el_teacher;
+		pteacher_t teacher_value = (p_teacher_list_node)tempP->el_teacher;
 		printf("[%d \t %s]", teacher_value->teacher_no, teacher_value->f_name);
-		tempP = (teacher_list_node*)(tempP->next_teacher);	//shifting to the next node in the linked list
+		tempP = (p_teacher_list_node)(tempP->next_teacher);	//shifting to the next node in the linked list
 		temp_no_of_nodes--;
 	}
 	printf(")\n");
 
 }
-int remove_last_teacher(teacher_list_node* headValue)
+int remove_last_teacher(p_teacher_list_node headValue)
 {
 	if (headValue == NULL)
 		return -1;
-	teacher_list_node* cursor = headValue;
-	teacher_list_node* back = NULL;
+	p_teacher_list_node cursor = headValue;
+	p_teacher_list_node back = NULL;
 	while (cursor->next_teacher != NULL)
 	{
 		back = cursor;
@@ -153,11 +153,11 @@ int remove_last_teacher(teacher_list_node* headValue)
 	return 0;
 }
 //remove node from the front of list(return 0 if succes, else -1)
-int remove_first_teacher(teacher_list_node* headValue)
+int remove_first_teacher(p_teacher_list_node headValue)
 {
 	if (headValue == NULL)
 		return NULL;
-	teacher_list_node* front = headValue;
+	p_teacher_list_node front = headValue;
 	headValue = headValue->next_teacher;
 	front->next_teacher = NULL;
 	if (front == headValue)//check if it is the last node in the list

@@ -61,7 +61,7 @@ void read_data_from_file(char* filename)
 			add_teacher_to_list(create_teacher(teacher_num, space_teacher));
 
 		}
-		else if ((sscanf_s(buff, "C %d %4s %d", &course_num, course_name, (unsigned)_countof(course_name), &semester_num)) == 3)
+		else if ((sscanf_s(buff, "C %d %5s %d", &course_num, course_name, (unsigned)_countof(course_name), &semester_num)) == 3)
 		{
 			char* space_course_name;
 			space_course_name = malloc(sizeof(char) * (strlen(course_name) + 1));

@@ -6,7 +6,7 @@
 
 pcourse_t create_course(int course_no, char* course_name, int semester_no)
 {
-	pcourse_t courseV = ((pcourse_t*)malloc(sizeof(pcourse_t)));
+	pcourse_t courseV = ((pcourse_t)malloc(sizeof(course_t)));
 	if (courseV == NULL) {
 		return NULL;
 	}
