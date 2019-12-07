@@ -7,10 +7,10 @@
 #include "enrollment.h"
 
 
-enrolment_t* enrol_student(pcourse_t* course, pcourse_t* student) {
-	enrolment_t *enrolmentV = ((enrolment_t*)malloc(sizeof(enrolment_t)));
+penrolment_t enrol_student(pcourse_t course, pcourse_t student) {
+	enrolment_t *enrolmentV = ((penrolment_t)malloc(sizeof(enrolment_t)));
 	if (enrolmentV == NULL) {
-		return -1;
+		return NULL;
 	}
 	else {
 		enrolmentV->course = course;
@@ -19,17 +19,17 @@ enrolment_t* enrol_student(pcourse_t* course, pcourse_t* student) {
 	}
 
 	}
-void destroy_enrolment(enrolment_t* enrolment) {
+void destroy_enrolment(penrolment_t enrolment) {
 	free(enrolment);
 	enrolment = NULL;
 }
-pcourse_t* getCourseOfEnrolment(enrolment_t* enrolment) {
+pcourse_t getCourseOfEnrolment(penrolment_t enrolment) {
 
 }
-pcourse_t* getStudentOfEnrolment(enrolment_t* enrolment) {
+pcourse_t getStudentOfEnrolmentp(penrolment_t enrolment) {
 
 }
-void print_enrolment_info(enrolment_t* enrolment) {
+void print_enrolment_info(penrolment_t enrolment) {
 	printf("S \t %s\t %s\n", enrolment->course, enrolment->student);
 
 }
