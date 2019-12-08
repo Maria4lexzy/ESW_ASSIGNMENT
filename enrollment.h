@@ -1,16 +1,25 @@
 #pragma once
+
 #include "student.h"
 #include "course.h"
+#include "linked_list.h"
 
-typedef struct enrolment_t* penrolment_t;
+typedef struct enrolment_t* p_enrolment_t;
 
 typedef struct enrolment_t {
-	pcourse_t course;
-	pstudent_t student;
+    course_t* course;
+    student_t* student;
 }enrolment_t;
 
-penrolment_t enrol_student(pcourse_t course, pstudent_t student);
-void destroy_enrolment(penrolment_t enrolment);
-pcourse_t getCourseOfEnrolment(penrolment_t enrolment);
-pcourse_t getStudentOfEnrolment(penrolment_t enrolment);
-void print_enrolment_info(penrolment_t enrolment);
+enrolment_t* constructEnrolment(course_t* course, student_t* student);
+void destroyEnrolment(enrolment_t* enrolment);
+void setEnrolmentCourse(enrolment_t* enrolment, course_t* course);
+void setEnrolmentStudent(enrolment_t* enrolment, student_t* student);
+course_t* getCourseOfEnrolment(enrolment_t* enrolment);
+student_t* getStudentOfEnrolment(enrolment_t* enrolment);
+void printEnrolmentInformation(enrolment_t* enrolment);
+p_list_t create_enrolment_list();
+p_list_t get_enrolment_list();
+void remove_enrolment_from_list(p_enrolment_t enrolment);
+void add_enrolment_to_list(p_enrolment_t enrolment);
+

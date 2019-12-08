@@ -1,17 +1,21 @@
-#pragma once
-#include "stdint.h"
+#include "linked_list.h"
 
+
+typedef struct student_t* p_student_t;
 
 typedef struct student_t {
-	//pcourse_t course_obj;
-	int student_num;
-	char* first_name;
-
+    int student_no;
+    char* f_name;
 }student_t;
-typedef struct student_t* pstudent_t;
 
-pstudent_t create_student(int student_num, char* self);
-int get_student_numb(student_t self);
-char* get_student_name(student_t self);
-void destroy_student(pstudent_t self);
-void print_student_info(pstudent_t student);
+p_list_t create_student_list();
+p_student_t createStudent(int student_no, char* f_name);
+void destroyStudent(p_student_t student);
+void setStudentNo(p_student_t student, int student_no);
+void setStudentFName(p_student_t student, char* f_name);
+int getStudentNo(p_student_t student);
+char* getStudentFName(p_student_t student);
+void print_Student_Information(p_student_t student);
+student_t* get_student_from_list(int student_no);
+void add_student_to_list(p_student_t student);
+void remove_student_from_list(p_student_t);
