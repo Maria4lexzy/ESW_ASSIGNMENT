@@ -14,8 +14,8 @@ void printLine() {
 void get_students_enrolled_in_course(course_t* course)
 {
 	printf("Students enrolled in %s\n\n", getCourseName(course));
-	p_list_t enrolment_list = get_enrolment_list();
-	for (int i = 0; i < no_of_items_in_list(enrolment_list); i++) {
+	plist_t enrolment_list = get_enrolment_list();
+	for (int i = 0; i < size(enrolment_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolment_list, i);
 		if (getCourseOfEnrolment(enrolment) == course) {
 			print_student_info(getStudentOfEnrolment(enrolment));
@@ -26,8 +26,8 @@ void get_students_enrolled_in_course(course_t* course)
 
 void print_students() {
 	printf("Students\n\n");
-	p_list_t alfred= get_student_list();
-	for (int i = 0; i < no_of_items_in_list(alfred); i++) {
+	plist_t alfred= get_student_list();
+	for (int i = 0; i < size(alfred); i++) {
 		student_t* student = get_element_from_list(get_student_list(), i);
 		print_student_info(student);
 	}
@@ -36,7 +36,7 @@ void print_students() {
 
 void print_enrolments() {
 	printf("Enrollments\n\n");
-	for (int i = 0; i < no_of_items_in_list(get_enrolment_list()); i++) {
+	for (int i = 0; i < size(get_enrolment_list()); i++) {
 		enrolment_t* enrolment = get_element_from_list(get_enrolment_list(), i);
 		printEnrolmentInformation(enrolment);
 	}
@@ -45,8 +45,8 @@ void print_enrolments() {
 
 void get_courses_list_by_teacher(teacher_t* teacher) {
 	printf("Courses assigned to %s\n\n", get_teacher_name(teacher));
-	p_list_t assignment_list = get_assignment_list();
-	for (int i = 0; i < no_of_items_in_list(assignment_list); i++) {
+	plist_t assignment_list = get_assignment_list();
+	for (int i = 0; i < size(assignment_list); i++) {
 		p_assignment_t assignment = get_element_from_list(assignment_list, i);
 		if (getAssignmentTeacher(assignment) == teacher) {
 			print_Course_Information(getAssignmentCourse(assignment));
@@ -58,8 +58,8 @@ void get_courses_list_by_teacher(teacher_t* teacher) {
 
 void get_courses_by_student(student_t* student) {
 	printf("Courses enrolled by %s\n\n", get_student_name(student));
-	p_list_t enrolment_list = get_enrolment_list();
-	for (int i = 0; i < no_of_items_in_list(enrolment_list); i++) {
+	plist_t enrolment_list = get_enrolment_list();
+	for (int i = 0; i < size(enrolment_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolment_list, i);
 		if (getStudentOfEnrolment(enrolment) == student) {
 			print_Course_Information(getCourseOfEnrolment(enrolment));
@@ -71,12 +71,12 @@ void get_courses_by_student(student_t* student) {
 
 void get_teachers_by_student(student_t* student) {
 	printf("Teacher teaching %s (hard)\n\n", get_student_name(student));
-	p_list_t enrolment_list = get_enrolment_list();
-	p_list_t assignment_list = get_assignment_list();
-	for (int i = 0; i < no_of_items_in_list(enrolment_list); i++) {
+	plist_t enrolment_list = get_enrolment_list();
+	plist_t assignment_list = get_assignment_list();
+	for (int i = 0; i < size(enrolment_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolment_list, i);
 		if (getStudentOfEnrolment(enrolment) == student){
-			for (int j = 0; j < no_of_items_in_list(assignment_list); j++) {
+			for (int j = 0; j < size(assignment_list); j++) {
 				p_assignment_t assignment = get_element_from_list(assignment_list, j);
 				if (getAssignmentCourse(assignment)==getCourseOfEnrolment(enrolment)) {
 					print_teacher_info(getAssignmentTeacher(assignment));

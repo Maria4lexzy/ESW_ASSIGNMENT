@@ -18,10 +18,10 @@ int getCourseNo(p_course_t course);
 char* getCourseName(p_course_t course);
 int get_semeter_num(p_course_t course);
 void print_Course_Information(p_course_t course);
-p_list_t create_course_list();
+plist_t create_course_list();
 void remove_course_from_list(p_course_t course);
 p_course_t get_course_from_list(int course_no);
 void add_course(p_course_t course);
-p_list_t get_course_list();
+plist_t get_course_list();
 
 

@@ -10,10 +10,10 @@
 #include "teacher.h"
 
 
-static p_list_t assignment_list;
+static plist_t assignment_list;
 
-p_list_t create_assignment_list() {
-	assignment_list = linked_list_create();
+plist_t create_assignment_list() {
+	assignment_list = creatae_linked_list();
 	return assignment_list;
 }
 
@@ -62,6 +62,6 @@ void remove_assignment_from_list(p_assignment_t assignment) {
 	remove_item_from_list(assignment_list, assignment);
 }
 
-p_list_t get_assignment_list() {
+plist_t get_assignment_list() {
 	return assignment_list;
 }

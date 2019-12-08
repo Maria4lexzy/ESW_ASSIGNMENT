@@ -22,8 +22,8 @@ void setEnrolmentStudent(enrolment_t *enrolment, student_t *student);
 course_t * getCourseOfEnrolment(enrolment_t *enrolment);
 student_t * getStudentOfEnrolment(enrolment_t *enrolment);
 void printEnrolmentInformation(enrolment_t *enrolment);
-p_list_t create_enrolment_list();
-p_list_t get_enrolment_list();
+plist_t create_enrolment_list();
+plist_t get_enrolment_list();
 void remove_enrolment_from_list(p_enrolment_t enrolment);
 void add_enrolment_to_list(p_enrolment_t enrolment);
 

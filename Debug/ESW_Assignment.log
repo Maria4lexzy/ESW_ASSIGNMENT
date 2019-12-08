@@ -2,9 +2,15 @@
   course.c
   database.c
   enrolment.c
+  linked_list.c
   readFromFile.c
 C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\readFromFile\readFromFile.c(57,53): warning C4013: 'strlen' undefined; assuming extern returning int
 C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\readFromFile\readFromFile.c(58,10): warning C4013: 'strcpy' undefined; assuming extern returning int
   student.c
+  teacher.c
+C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\teacher.c(64,26): warning C4047: '<': 'int' differs in levels of indirection from 'int (__cdecl *)(plist_t)'
   Generating Code...
+C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\linked_list.c(60): warning C4715: 'get_list_node': not all control paths return a value
+C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\linked_list.c(76): warning C4715: 'get_previous_node': not all control paths return a value
+C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\linked_list.c(132): warning C4715: 'get_element_from_list': not all control paths return a value
   ESW_Assignment.vcxproj -> C:\Users\maria\OneDrive - ViaUC\Skrivebord\ESW_ASSIGNMENT\Debug\ESW_Assignment.exe

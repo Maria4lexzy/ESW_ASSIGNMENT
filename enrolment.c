@@ -8,7 +8,7 @@
 #include "linked_list.h"
 #include <stdio.h>
 #include <malloc.h>
-static p_list_t enrolment_list;
+static plist_t enrolment_list;
 
 enrolment_t * constructEnrolment(course_t *course, student_t *student){
     enrolment_t *enrolment = (enrolment_t*)malloc(sizeof(enrolment_t));
@@ -42,13 +42,13 @@ void printEnrolmentInformation(enrolment_t *enrolment){
     printf("E \t %d\t %d\n", enrolment->student->student_no, enrolment->course->course_no);
 }
 
-p_list_t create_enrolment_list()
+plist_t create_enrolment_list()
 {
-	enrolment_list = linked_list_create();
+	enrolment_list = creatae_linked_list();
 	return enrolment_list;
 }
 
-p_list_t get_enrolment_list()
+plist_t get_enrolment_list()
 {
 	return enrolment_list;
 }

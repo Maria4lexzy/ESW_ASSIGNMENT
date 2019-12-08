@@ -7,10 +7,10 @@
 
 #pragma warning(disable : 4996)
 
-static p_list_t student_list;
+static plist_t student_list;
 
-p_list_t create_student_list(){
-    student_list = linked_list_create();
+plist_t create_student_list(){
+    student_list = creatae_linked_list();
     return student_list;
 }
 
@@ -35,7 +35,7 @@ void destroy_student(p_student_t student){
 
 p_student_t get_student(int student_no)
 {
-	for (int i = 0; i < no_of_items_in_list(student_list); i++) {
+	for (int i = 0; i < size(student_list); i++) {
 		if (((p_student_t)get_element_from_list(student_list, i))->student_no == student_no) {
 			return ((p_student_t)get_element_from_list(student_list, i));
 		}
@@ -52,8 +52,8 @@ if(student_list == NULL){
 
 void remove_student_from_list(p_student_t student){
     remove_item_from_list(student_list, student);
-	p_list_t enrolments_list = get_enrolment_list();
-	for (int i = 0; i < no_of_items_in_list(enrolments_list); i++) {
+	plist_t enrolments_list = get_enrolment_list();
+	for (int i = 0; i < size(enrolments_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolments_list, i);
 		if (getStudentOfEnrolment(enrolment) == student) {
 			remove_enrolment_from_list(enrolment);
@@ -62,7 +62,7 @@ void remove_student_from_list(p_student_t student){
 	
 }
 
-p_list_t get_student_list(){
+plist_t get_student_list(){
     return student_list;
 }
 

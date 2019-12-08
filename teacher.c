@@ -6,11 +6,11 @@
 
 #pragma warning(disable : 4996)
 
-static p_list_t teacher_list;
+static plist_t teacher_list;
 
 
-p_list_t create_teacher_list() {
-	teacher_list = linked_list_create();
+plist_t create_teacher_list() {
+	teacher_list = creatae_linked_list();
 	return teacher_list;
 }
 
@@ -61,7 +61,7 @@ void add_teacher(p_teacher_t teacher) {
 
 p_teacher_t get_teacher(int teacher_no)
 {
-	for (int i = 0; i < no_of_items_in_list; i++) {
+	for (int i = 0; i < size; i++) {
 		if (((p_teacher_t)get_element_from_list(teacher_list, i))->teacher_no == teacher_no) {
 			return ((p_teacher_t)get_element_from_list(teacher_list, i));
 		}
@@ -73,7 +73,7 @@ void remove_teacher_from_list(p_teacher_t teacher) {
 	remove_item_from_list(teacher_list, teacher);
 }
 
-p_list_t get_teacher_list() {
+plist_t get_teacher_list() {
 	return teacher_list;
 }
 

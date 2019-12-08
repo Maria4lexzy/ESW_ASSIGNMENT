@@ -1,20 +1,34 @@
 #pragma once
 
-typedef struct node* p_node_t;
-typedef struct list* p_list_t;
+typedef struct node_t* pnode_t;
+typedef struct list_t* plist_t;
+typedef struct node_t {
+	void* element;
+	pnode_t next;
+} node_t;
 
-p_list_t linked_list_create();
 
-int no_of_items_in_list(p_list_t list);
+typedef struct list_t {
+	int size;
+	pnode_t current;
+	pnode_t head
+		;
+}list_t;
 
-int add_item_to_list(p_list_t list, void* item);
 
-p_node_t search(p_list_t list, p_node_t node, void* item);
 
-p_node_t get_before(p_list_t list,p_node_t current, const p_node_t node);
+plist_t creatae_linked_list();
 
-int remove_item_from_list(p_list_t list, void* item);
+int size(plist_t list);
 
-void linked_list_destroy(p_list_t self);
+int add_item_to_list(plist_t list, void* item);
 
-void* get_element_from_list(p_list_t self, int i);
+pnode_t get_list_node(plist_t list, pnode_t node, void* item);
+
+pnode_t get_previous_node(plist_t list,pnode_t current, const pnode_t node);
+
+int remove_item_from_list(plist_t list, void* item);
+
+void destory_linked_list(plist_t self);
+
+void* get_element_from_list(plist_t self, int i);

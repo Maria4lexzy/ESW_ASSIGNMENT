@@ -17,8 +17,8 @@ void print_student_info(p_student_t student);
 p_student_t get_student(int student_no);
 void add_student(p_student_t student);
 void remove_student_from_list(p_student_t);
-p_list_t create_student_list();
-p_list_t get_student_list();
+plist_t create_student_list();
+plist_t get_student_list();
 
 
 
