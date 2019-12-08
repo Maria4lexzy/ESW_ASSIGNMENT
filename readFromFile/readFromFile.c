@@ -56,8 +56,8 @@ void read_data_from_file(char* filename)
 			char* space_course_name;
 			space_course_name = malloc(sizeof(char) * (strlen(course_name) + 1));
 			strcpy(space_course_name, course_name);
-			p_course_t course = createCourse(course_num, space_course_name, semester_num);
-			add_course_to_list(course);
+			p_course_t course = create_course(course_num, space_course_name, semester_num);
+			add_course(course);
 
 		}
 		else if ((sscanf_s(buff, "E %d %d", &student_num, &course_num)) == 2)
