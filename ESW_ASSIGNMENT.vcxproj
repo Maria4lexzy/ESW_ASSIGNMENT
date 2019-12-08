@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D98B194D-11C3-4796-AAE6-2C19A2E36411}</ProjectGuid>
-    <RootNamespace>ESWASSIGNMENT</RootNamespace>
+    <ProjectGuid>{CCA13CF1-39B8-4AA8-8DC9-5CDB154BBC16}</ProjectGuid>
+    <RootNamespace>ESWAssignment</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,29 +123,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="course.h" />
-    <ClInclude Include="enrollment.h" />
-    <ClInclude Include="linked_list.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="read_data.h" />
-    <ClInclude Include="student.h" />
-    <ClInclude Include="teacher.h" />
-    <ClInclude Include="assignment.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="assignment.c" />
     <ClCompile Include="course.c" />
-    <ClCompile Include="enrollment.c" />
+    <ClCompile Include="database.c" />
+    <ClCompile Include="enrolment.c" />
     <ClCompile Include="linked_list.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="read_data.c" />
+    <ClCompile Include="readFromFile\readFromFile.c" />
     <ClCompile Include="student.c" />
     <ClCompile Include="teacher.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="course_database.Txt" />
+    <ClInclude Include="assignment.h" />
+    <ClInclude Include="course.h" />
+    <ClInclude Include="database.h" />
+    <ClInclude Include="enrolment.h" />
+    <ClInclude Include="linked_list.h" />
+    <ClInclude Include="readFromFile\readFromFile.h" />
+    <ClInclude Include="student.h" />
+    <ClInclude Include="teacher.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

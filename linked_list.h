@@ -11,7 +11,7 @@ int add_item_to_list(p_list_t list, void* item);
 
 p_node_t search(p_list_t list, p_node_t node, void* item);
 
-p_node_t get_before(p_list_t list, p_node_t current, const p_node_t node);
+p_node_t get_before(p_list_t list,p_node_t current, const p_node_t node);
 
 int remove_item_from_list(p_list_t list, void* item);
 

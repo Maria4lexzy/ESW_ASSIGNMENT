@@ -15,36 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="course.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="teacher.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="assignment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="enrollment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="read_data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="linked_list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="assignment.c">
+    <ClCompile Include="course.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="course.c">
+    <ClCompile Include="enrolment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="linked_list.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="student.c">
@@ -53,24 +30,45 @@
     <ClCompile Include="teacher.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.c">
+    <ClCompile Include="readFromFile\readFromFile.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="enrollment.c">
+    <ClCompile Include="assignment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="read_data.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="linked_list.c">
+    <ClCompile Include="database.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="course_database.Txt">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
+    <ClInclude Include="assignment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="course.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enrolment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="linked_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="student.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teacher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="readFromFile\readFromFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
