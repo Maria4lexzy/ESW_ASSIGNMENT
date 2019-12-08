@@ -44,7 +44,7 @@ void print_enrolments() {
 }
 
 void get_courses_list_by_teacher(teacher_t* teacher) {
-	printf("Courses assigned to %s\n\n", getTeacherFName(teacher));
+	printf("Courses assigned to %s\n\n", get_teacher_name(teacher));
 	p_list_t assignment_list = get_assignment_list();
 	for (int i = 0; i < no_of_items_in_list(assignment_list); i++) {
 		p_assignment_t assignment = get_element_from_list(assignment_list, i);
@@ -79,7 +79,7 @@ void get_teachers_by_student(student_t* student) {
 			for (int j = 0; j < no_of_items_in_list(assignment_list); j++) {
 				p_assignment_t assignment = get_element_from_list(assignment_list, j);
 				if (getAssignmentCourse(assignment)==getCourseOfEnrolment(enrolment)) {
-					print_Teacher_Information(getAssignmentTeacher(assignment));
+					print_teacher_info(getAssignmentTeacher(assignment));
 				}
 			}
 		}
@@ -94,7 +94,7 @@ int main(void) {
 	read_data_from_file("CMakeLists.txt");
 	get_students_enrolled_in_course(get_course_from_list(21));
 	print_students();
-	get_courses_list_by_teacher(get_teacher_from_list(123456));
+	get_courses_list_by_teacher(get_teacher(123456));
 	get_courses_by_student(get_student(654321));
 	get_teachers_by_student(get_student(123456));
 	print_enrolments();
