@@ -5,6 +5,12 @@
 #include "assignment.h"
 #include "student.h"
 
+void printLine();
+
+void print_enrolments();
+
+void print_students();
+
 void get_students_enrolled_in_course(course_t* course);
 
 void get_courses_list_by_teacher(teacher_t* teacher);

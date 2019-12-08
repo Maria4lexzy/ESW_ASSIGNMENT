@@ -28,7 +28,7 @@ typedef struct list {
 //works like a constructor
 p_list_t linked_list_create()
 {
-	p_list_t new_list = malloc(sizeof(struct list));
+	p_list_t new_list = malloc(sizeof(list_t));
 	new_list->size = 0;
 	new_list->top = NULL;
 	new_list->first = NULL;
@@ -171,3 +171,4 @@ void linked_list_destroy(p_list_t self)
 void* get_element_from_list(p_list_t self, int i)
 {
 	p_node_t current = self->first;
+}

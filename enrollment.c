@@ -2,14 +2,9 @@
 #include <malloc.h>
 #include <string.h>
 #include <stdlib.h>
+#include "enrollment.h"
 #include "course.h"
 #include "student.h"
-#include "enrollment.h"
-
-include <string.h>
-#include "course.h"
-#include "student.h"
-#include "enrollment.h"
 #include "linked_list.h"
 #include <stdio.h>
 

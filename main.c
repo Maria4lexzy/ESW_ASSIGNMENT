@@ -1,11 +1,28 @@
 #include "main.h"
 #pragma once
-#include "enrolment.h"
-#include "readFromFile/readFromFile.h"
+#include "enrollment.h"
 #include "linked_list.h"
+#include "read_data.h"
 #include "student.h"
 #include "assignment.h"
-#include "enrolment.h"
+#include "enrollment.h"
+
+
+char* filename = "course_database.txt";
+
+
+int main(void) {
+	printLine();
+	read_data_from_file(filename);
+	get_students_enrolled_in_course(get_course_from_list(21));
+	print_students();
+	get_courses_list_by_teacher(get_teacher_from_list(123456));
+	get_courses_by_student(get_student_from_list(654321));
+	get_teachers_by_student(get_student_from_list(123456));
+	print_enrolments();
+	remove_student_from_list(get_student_from_list(654321));
+	print_enrolments();
+}
 
 void printLine() {
 	printf("\n--------------------------------\n");
@@ -86,17 +103,3 @@ void get_teachers_by_student(student_t* student) {
 	printLine();
 }
 
-
-
-int main(void) {
-	printLine();
-	read_from_file("CMakeLists.txt");
-	get_students_enrolled_in_course(get_course_from_list(21));
-	print_students();
-	get_courses_list_by_teacher(get_teacher_from_list(123456));
-	get_courses_by_student(get_student_from_list(654321));
-	get_teachers_by_student(get_student_from_list(123456));
-	print_enrolments();
-	remove_student_from_list(get_student_from_list(654321));
-	print_enrolments();
-}

@@ -4,11 +4,10 @@
 #include <stdlib.h>
 #include "read_data.h"
 #include "student.h"
-#include "student_list.h"
 #include "teacher.h"
-#include "teacher_list.h"
 #include "course.h"
-#include "course_list.h"
+#include "assignment.h"
+#include "enrollment.h"
 
 #define MAX_LENGTH 1000
 #define MAX_NAME_LENGTH 20
@@ -49,7 +48,9 @@ void read_data_from_file(char* filename)
 			char* space_student;
 			space_student = malloc(sizeof(char) * (strlen(student_name) + 1));
 			strcpy(space_student, student_name);
-			add_student_to_list(create_student(student_num, space_student));
+			p_student_t student = createStudent(student_num, space_student);
+			add_student_to_list(student);
+
 
 		}
 		else if ((sscanf_s(buff, "T %d %s", &teacher_num, &teacher_name, (unsigned)_countof(teacher_name))) == 2)
@@ -58,7 +59,8 @@ void read_data_from_file(char* filename)
 			space_teacher = malloc(sizeof(char) * (strlen(teacher_name) + 1));
 			strcpy(space_teacher, teacher_name);
 			//printf("Teacher name: %s , Teacher num: %d added to list\n", space_teacher, teacher_num);
-			add_teacher_to_list(create_teacher(teacher_num, space_teacher));
+			p_teacher_t teacher = createTeacher(teacher_num, space_teacher);
+			add_teacher_to_list(teacher);
 
 		}
 		else if ((sscanf_s(buff, "C %d %5s %d", &course_num, course_name, (unsigned)_countof(course_name), &semester_num)) == 3)
@@ -66,18 +68,27 @@ void read_data_from_file(char* filename)
 			char* space_course_name;
 			space_course_name = malloc(sizeof(char) * (strlen(course_name) + 1));
 			strcpy(space_course_name, course_name);
-			add_course_to_list(create_course(course_num, space_course_name, semester_num));
+			p_course_t course = createCourse(course_num, space_course_name, semester_num);
+			add_course_to_list(course);
 
 		}
 		else if ((sscanf_s(buff, "E %d %d", &student_num, &course_num)) == 2)
 		{
 			//enrolStudent(student_number, course_number);
-			printf("student: %d assigned to course %d\n", student_num, course_num);
+			//printf("student: %d assigned to course %d\n", student_num, course_num);
+			p_student_t student = get_student_from_list(student_num);
+			p_course_t course = get_course_from_list(course_num);
+			p_enrolment_t enrolment = constructEnrolment(course, student);
+			add_enrolment_to_list(enrolment);
 		}
 		else if ((sscanf_s(buff, "A %d %d", &teacher_num, &course_num)) == 2)
 		{
 			//printf("Teacher: %d ,  assigned to course: %d\n", teacher_num, course_num);
 			//assignTeacher(teacher_number, course_number);
+			p_teacher_t teacher = get_teacher_from_list(teacher_num);
+			p_course_t course = get_course_from_list(course_num);
+			p_assignment_t assignment = createAssignment(course, teacher);
+			add_assignment_to_list(assignment);
 		}
 
 	}
