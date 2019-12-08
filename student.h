@@ -7,7 +7,6 @@ typedef struct student_t {
 }student_t;
 typedef struct student_t* p_student_t;
 
-p_list_t create_student_list();
 p_student_t create_student(int student_no, char *f_name);
 void destroy_student(p_student_t student);
 void set_student_num(p_student_t student, int student_no);
@@ -18,6 +17,7 @@ void print_student_info(p_student_t student);
 p_student_t get_student(int student_no);
 void add_student(p_student_t student);
 void remove_student_from_list(p_student_t);
+p_list_t create_student_list();
 p_list_t get_student_list();
 
 

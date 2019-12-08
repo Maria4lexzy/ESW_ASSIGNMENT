@@ -47,8 +47,8 @@ void read_data_from_file(char* filename)
 			space_teacher = malloc(sizeof(char) * (strlen(teacher_name) + 1));
 			strcpy(space_teacher, teacher_name);*/
 			//printf("Teacher name: %s , Teacher num: %d added to list\n", space_teacher, teacher_num);
-			p_teacher_t teacher = createTeacher(teacher_num, teacher_name);
-			add_teacher_to_list(teacher);
+			p_teacher_t teacher = create_teacher(teacher_num, teacher_name);
+			add_teacher(teacher);
 
 		}
 		else if ((sscanf_s(buff, "C %d %s %d", &course_num, course_name, (unsigned)_countof(course_name), &semester_num)) == 3)
@@ -73,7 +73,7 @@ void read_data_from_file(char* filename)
 		{
 			//printf("Teacher: %d ,  assigned to course: %d\n", teacher_num, course_num);
 			//assignTeacher(teacher_number, course_number);
-			p_teacher_t teacher = get_teacher_from_list(teacher_num);
+			p_teacher_t teacher = get_teacher(teacher_num);
 			p_course_t course = get_course_from_list(course_num);
 			p_assignment_t assignment = createAssignment(course, teacher);
 			add_assignment_to_list(assignment);
