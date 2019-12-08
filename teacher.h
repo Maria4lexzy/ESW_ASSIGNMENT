@@ -16,8 +16,3 @@ void set_teacher_name(p_teacher_t teacher, char *f_name);
 int get_teacher_num(p_teacher_t teacher);
 char* get_teacher_name(p_teacher_t teacher);
 void print_teacher_info(p_teacher_t teacher);
-void add_teacher(p_teacher_t teacher);
-p_teacher_t get_teacher(int teacher_no);
-void remove_teacher_from_list(p_teacher_t teacher);
-plist_t get_teacher_list();
-plist_t create_teacher_list();

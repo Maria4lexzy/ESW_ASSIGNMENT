@@ -10,8 +10,8 @@
 #include <malloc.h>
 static plist_t enrolment_list;
 
-enrolment_t * constructEnrolment(course_t *course, student_t *student){
-    enrolment_t *enrolment = (enrolment_t*)malloc(sizeof(enrolment_t));
+p_enrolment_t create_enrolment(p_course_t course, p_student_t student){
+    p_enrolment_t enrolment = (p_enrolment_t)malloc(sizeof(enrolment_t));
     if (enrolment == NULL)
     {
         return NULL;
@@ -23,23 +23,23 @@ enrolment_t * constructEnrolment(course_t *course, student_t *student){
         return enrolment;
     }
 }
-void destroyEnrolment(enrolment_t *enrolment){
+void destroy_enrolment(p_enrolment_t enrolment){
     free(enrolment);
 }
-void setEnrolmentCourse(enrolment_t *enrolment, course_t *course){
+void set_course_to_enrolment(p_enrolment_t enrolment, p_course_t course){
     enrolment->course = course;
 }
-void setEnrolmentStudent(enrolment_t *enrolment, student_t *student){
+void set_student_to_enrolment(p_enrolment_t enrolment, p_student_t student){
     enrolment->student = student;
 }
-course_t * getCourseOfEnrolment(enrolment_t *enrolment){
+p_course_t get_course_of_enrolment(p_enrolment_t enrolment){
     return enrolment->course;
 }
-student_t * getStudentOfEnrolment(enrolment_t *enrolment){
+p_student_t get_student_of_enrolment(p_enrolment_t enrolment){
     return enrolment->student;
 }
-void printEnrolmentInformation(enrolment_t *enrolment){
-    printf("E \t %d\t %d\n", enrolment->student->student_no, enrolment->course->course_no);
+void print_enrolment_info(p_enrolment_t enrolment){
+    printf("\t\tE \t %d\t %d\n", enrolment->student->student_no, enrolment->course->course_no);
 }
 
 plist_t create_enrolment_list()

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="read_txt">
+      <UniqueIdentifier>{9a61cca4-05ca-47a3-b233-f7c73840e011}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="course.c">
@@ -30,14 +33,20 @@
     <ClCompile Include="teacher.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="readFromFile\readFromFile.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="assignment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="database.c">
+    <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="course_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="teacher_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="readFromFile\read_data.c">
+      <Filter>read_txt</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,16 +68,20 @@
     <ClInclude Include="teacher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="readFromFile\readFromFile.h">
+    <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="database.h">
+    <ClInclude Include="course_list.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teacher_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="readFromFile\read_data.h">
+      <Filter>read_txt</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="CMakeLists.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <Text Include="course_database.txt" />
   </ItemGroup>
 </Project>

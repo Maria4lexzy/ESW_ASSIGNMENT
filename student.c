@@ -55,7 +55,7 @@ void remove_student_from_list(p_student_t student){
 	plist_t enrolments_list = get_enrolment_list();
 	for (int i = 0; i < size(enrolments_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolments_list, i);
-		if (getStudentOfEnrolment(enrolment) == student) {
+		if (get_student_of_enrolment(enrolment) == student) {
 			remove_enrolment_from_list(enrolment);
 		}
 	}
@@ -85,6 +85,6 @@ char* get_student_name(p_student_t student) {
 
 void print_student_info(p_student_t student)
 {
-	printf("S \t %s\t %d\n", student->f_name, student->student_no);
+	printf("\t\tS \t %s\t %d\n", student->f_name, student->student_no);
 }
 

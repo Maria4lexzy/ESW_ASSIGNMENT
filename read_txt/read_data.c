@@ -1,5 +1,5 @@
 
-#include "readFromFile.h"
+#include "read_data.h"
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -66,7 +66,7 @@ void read_data_from_file(char* filename)
 			//printf("student: %d assigned to course %d\n", student_num, course_num);
 			p_student_t student = get_student(student_num);
 			p_course_t course = get_course_from_list(course_num);
-			p_enrolment_t enrolment = constructEnrolment(course, student);
+			p_enrolment_t enrolment = create_enrolment(course, student);
 			add_enrolment_to_list(enrolment);
 		}
 		else if ((sscanf_s(buff, "A %d %d", &teacher_num, &course_num)) == 2)
