@@ -45,8 +45,8 @@
     <ClCompile Include="teacher_list.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="readFromFile\read_data.c">
-      <Filter>read_txt</Filter>
+    <ClCompile Include="read_txt\read_data.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,8 +77,8 @@
     <ClInclude Include="teacher_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="readFromFile\read_data.h">
-      <Filter>read_txt</Filter>
+    <ClInclude Include="read_txt\read_data.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

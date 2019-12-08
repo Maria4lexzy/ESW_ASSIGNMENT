@@ -1,6 +1,4 @@
-//
-// Created by Alicja Siudak on 03/12/2019.
-//
+
 #include <string.h>
 #include "course.h"
 #include "student.h"

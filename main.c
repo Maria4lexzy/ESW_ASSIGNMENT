@@ -8,8 +8,6 @@
 #include "enrolment.h"
 
 
-
-
 int main(void) {
 	printf("\n");
 	read_data_from_file("course_database.txt");
@@ -36,32 +34,13 @@ void get_students_enrolled_in_course(p_course_t course)
 	print_divider();
 }
 
-void print_students() {
-	printf("\t\tStudents\n\n");
-	plist_t alfred= get_student_list();
-	for (int i = 0; i < size(alfred); i++) {
-		p_student_t student = get_element_from_list(get_student_list(), i);
-		print_student_info(student);
-	}
-	print_divider();
-}
-
-void print_enrolments() {
-	printf("\t\tEnrollments\n\n");
-	for (int i = 0; i < size(get_enrolment_list()); i++) {
-		p_enrolment_t enrolment = get_element_from_list(get_enrolment_list(), i);
-		print_enrolment_info(enrolment);
-	}
-	print_divider();
-}
-
 void get_courses_list_by_teacher(p_teacher_t teacher) {
 	printf("\t\tCourses assigned to %s\n\n", get_teacher_name(teacher));
 	plist_t assignment_list = get_assignment_list();
 	for (int i = 0; i < size(assignment_list); i++) {
 		p_assignment_t assignment = get_element_from_list(assignment_list, i);
-		if (getAssignmentTeacher(assignment) == teacher) {
-			print_course_info(getAssignmentCourse(assignment));
+		if (get_teacher_assignment(assignment) == teacher) {
+			print_course_info(get_course_assignment(assignment));
 		}
 	}
 	print_divider();
@@ -90,8 +69,8 @@ void get_teachers_by_student(p_student_t student) {
 		if (get_student_of_enrolment(enrolment) == student){
 			for (int j = 0; j < size(assignment_list); j++) {
 				p_assignment_t assignment = get_element_from_list(assignment_list, j);
-				if (getAssignmentCourse(assignment)==get_course_of_enrolment(enrolment)) {
-					print_teacher_info(getAssignmentTeacher(assignment));
+				if (get_course_assignment(assignment)==get_course_of_enrolment(enrolment)) {
+					print_teacher_info(get_teacher_assignment(assignment));
 				}
 			}
 		}
@@ -99,6 +78,25 @@ void get_teachers_by_student(p_student_t student) {
 	print_divider();
 }
 
+
+void print_students() {
+	printf("\t\tStudents\n\n");
+	plist_t alfred = get_student_list();
+	for (int i = 0; i < size(alfred); i++) {
+		p_student_t student = get_element_from_list(get_student_list(), i);
+		print_student_info(student);
+	}
+	print_divider();
+}
+
+void print_enrolments() {
+	printf("\t\tEnrollments\n\n");
+	for (int i = 0; i < size(get_enrolment_list()); i++) {
+		p_enrolment_t enrolment = get_element_from_list(get_enrolment_list(), i);
+		print_enrolment_info(enrolment);
+	}
+	print_divider();
+}
 
 void print_divider() {
 	printf("\n------------------------------------------------------------\n");
