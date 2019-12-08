@@ -1,10 +1,4 @@
-//
-// Created by Alicja Siudak on 03/12/2019.
-//
-
-#ifndef ESW_ASSIGNMENT_ASSIGNMENT_H
-#define ESW_ASSIGNMENT_ASSIGNMENT_H
-
+#pragma once
 #include "linked_list.h"
 #include "course.h"
 #include "teacher.h"
@@ -28,5 +22,3 @@ void printAssignmentInformation(assignment_t* assignment);
 p_list_t get_assignment_list();
 void add_assignment_to_list(p_assignment_t assignment);
 void remove_assignment_from_list(p_assignment_t assignment);
-
-#endif

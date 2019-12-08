@@ -1,6 +1,2 @@
-﻿  database.c
-  readFromFile.c
-D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\readFromFile\readFromFile.c(60,53): warning C4013: 'strlen' undefined; assuming extern returning int
-  Generating Code...
-D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\readFromFile\readFromFile.c(61,10): warning C4013: 'strcpy' undefined; assuming extern returning int
+﻿  student.c
   ESW_Assignment.vcxproj -> D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\x64\Debug\ESW_Assignment.exe

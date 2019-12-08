@@ -18,7 +18,7 @@ void get_students_enrolled_in_course(course_t* course)
 	for (int i = 0; i < no_of_items_in_list(enrolment_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolment_list, i);
 		if (getCourseOfEnrolment(enrolment) == course) {
-			print_Student_Information(getStudentOfEnrolment(enrolment));
+			print_student_info(getStudentOfEnrolment(enrolment));
 		}
 	}
 	printLine();
@@ -29,7 +29,7 @@ void print_students() {
 	p_list_t alfred= get_student_list();
 	for (int i = 0; i < no_of_items_in_list(alfred); i++) {
 		student_t* student = get_element_from_list(get_student_list(), i);
-		print_Student_Information(student);
+		print_student_info(student);
 	}
 	printLine();
 }
@@ -57,7 +57,7 @@ void get_courses_list_by_teacher(teacher_t* teacher) {
 
 
 void get_courses_by_student(student_t* student) {
-	printf("Courses enrolled by %s\n\n", getStudentFName(student));
+	printf("Courses enrolled by %s\n\n", get_student_name(student));
 	p_list_t enrolment_list = get_enrolment_list();
 	for (int i = 0; i < no_of_items_in_list(enrolment_list); i++) {
 		p_enrolment_t enrolment = get_element_from_list(enrolment_list, i);
@@ -70,7 +70,7 @@ void get_courses_by_student(student_t* student) {
 
 
 void get_teachers_by_student(student_t* student) {
-	printf("Teacher teaching %s (hard)\n\n", getStudentFName(student));
+	printf("Teacher teaching %s (hard)\n\n", get_student_name(student));
 	p_list_t enrolment_list = get_enrolment_list();
 	p_list_t assignment_list = get_assignment_list();
 	for (int i = 0; i < no_of_items_in_list(enrolment_list); i++) {
@@ -95,9 +95,9 @@ int main(void) {
 	get_students_enrolled_in_course(get_course_from_list(21));
 	print_students();
 	get_courses_list_by_teacher(get_teacher_from_list(123456));
-	get_courses_by_student(get_student_from_list(654321));
-	get_teachers_by_student(get_student_from_list(123456));
+	get_courses_by_student(get_student(654321));
+	get_teachers_by_student(get_student(123456));
 	print_enrolments();
-	remove_student_from_list(get_student_from_list(654321));
+	remove_student_from_list(get_student(654321));
 	print_enrolments();
 }

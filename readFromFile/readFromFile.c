@@ -1,6 +1,3 @@
-//
-// Created by Alicja Siudak on 04/12/2019.
-//
 
 #include "readFromFile.h"
 #include <stdio.h>
@@ -39,8 +36,8 @@ void read_data_from_file(char* filename)
 			/*char* space_student;
 			space_student = malloc(sizeof(char) * (strlen(student_name) + 1));
 			strcpy(space_student, student_name);*/
-			p_student_t student = createStudent(student_num, student_name);
-			add_student_to_list(student);
+			p_student_t student = create_student(student_num, student_name);
+			add_student(student);
 
 
 		}
@@ -67,7 +64,7 @@ void read_data_from_file(char* filename)
 		{
 			//enrolStudent(student_number, course_number);
 			//printf("student: %d assigned to course %d\n", student_num, course_num);
-			p_student_t student = get_student_from_list(student_num);
+			p_student_t student = get_student(student_num);
 			p_course_t course = get_course_from_list(course_num);
 			p_enrolment_t enrolment = constructEnrolment(course, student);
 			add_enrolment_to_list(enrolment);

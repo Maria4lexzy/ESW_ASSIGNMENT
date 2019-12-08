@@ -1,6 +1,4 @@
-//
-// Created by Alicja Siudak on 03/12/2019.
-//
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -17,7 +15,7 @@ p_list_t create_student_list(){
     return student_list;
 }
 
-p_student_t createStudent(int student_no, char* f_name){
+p_student_t create_student(int student_no, char* f_name){
 	p_student_t student = (p_student_t)malloc(sizeof(student_t));
     if(student == NULL){
         return NULL;
@@ -29,35 +27,14 @@ p_student_t createStudent(int student_no, char* f_name){
     }
 }
 
-void destroyStudent(p_student_t student){
+void destroy_student(p_student_t student){
+
     free(student->f_name);
-    //make sure nobody will use it
     char* f_name = NULL;
     free(student);
 }
 
-void setStudentNo(p_student_t student, int student_no){
-    student->student_no=student_no;
-}
-
-void setStudentFName(p_student_t student, char* f_name){
-    student->f_name = f_name;
-}
-
-int getStudentNo(p_student_t student){
-    return student->student_no;
-}
-
-char* getStudentFName(p_student_t student){
-    return student->f_name;
-}
-
-void print_Student_Information(p_student_t student)
-{
-    printf("S \t %s\t %d\n", student->f_name, student->student_no);
-}
-
-student_t* get_student_from_list(int student_no)
+p_student_t get_student(int student_no)
 {
 	for (int i = 0; i < no_of_items_in_list(student_list); i++) {
 		if (((p_student_t)get_element_from_list(student_list, i))->student_no == student_no) {
@@ -67,7 +44,7 @@ student_t* get_student_from_list(int student_no)
 	return NULL;
 }
 
-void add_student_to_list(p_student_t student){
+void add_student(p_student_t student){
 if(student_list == NULL){
     student_list = create_student_list();
 }
@@ -88,5 +65,27 @@ void remove_student_from_list(p_student_t student){
 
 p_list_t get_student_list(){
     return student_list;
+}
+
+
+void set_student_num(p_student_t student, int student_no) {
+	student->student_no = student_no;
+}
+
+void set_student_name(p_student_t student, char* f_name) {
+	student->f_name = f_name;
+}
+
+int get_student_number(p_student_t student) {
+	return student->student_no;
+}
+
+char* get_student_name(p_student_t student) {
+	return student->f_name;
+}
+
+void print_student_info(p_student_t student)
+{
+	printf("S \t %s\t %d\n", student->f_name, student->student_no);
 }
 
