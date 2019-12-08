@@ -1,19 +1,25 @@
 #pragma once
-#include <stdio.h>
-#include <stdbool.h>
-#include "teacher.h"
+
+#include "linked_list.h"
 #include "course.h"
+#include "teacher.h"
+
+
+typedef struct assignment_t* p_assignment_t;
 
 typedef struct assignment_t {
-	pcourse_t course;
-	pteacher_t teacher;
+	course_t* course;
+	teacher_t* teacher;
 }assignment_t;
-typedef struct assignment_t* passignment_t;
 
-passignment_t create_assignment(pcourse_t course, pteacher_t teacher);
-void destroy_assignment(passignment_t assignment);
-void set_assignment_course(passignment_t assignment, pcourse_t course);
-void set_assignment_teacher(passignment_t assignment, pteacher_t teacher);
-pcourse_t get_assignment_course(passignment_t assignment);
-pteacher_t get_assignment_teacher(passignment_t assignment);
-void print_assignment_info(passignment_t assignment);
+p_list_t create_assignment_list();
+assignment_t* createAssignment(course_t* course, teacher_t* teacher);
+void destroyAssignment(assignment_t* assignment);
+void setAssignmentCourse(assignment_t* assignment, course_t* course);
+void setAssignmentTeacher(assignment_t* assignment, teacher_t* teacher);
+course_t* getAssignmentCourse(assignment_t* assignment);
+teacher_t* getAssignmentTeacher(assignment_t* assignment);
+void printAssignmentInformation(assignment_t* assignment);
+p_list_t get_assignment_list();
+void add_assignment_to_list(p_assignment_t assignment);
+void remove_assignment_from_list(p_assignment_t assignment);
