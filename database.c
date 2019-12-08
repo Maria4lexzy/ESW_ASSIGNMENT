@@ -91,7 +91,7 @@ void get_teachers_by_student(student_t* student) {
 
 int main(void) {
 	printLine();
-	read_from_file("CMakeLists.txt");
+	read_data_from_file("CMakeLists.txt");
 	get_students_enrolled_in_course(get_course_from_list(21));
 	print_students();
 	get_courses_list_by_teacher(get_teacher_from_list(123456));

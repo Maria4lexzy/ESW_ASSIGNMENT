@@ -1,14 +1,6 @@
-﻿  assignment.c
-  course.c
-  database.c
-  enrolment.c
-  linked_list.c
+﻿  database.c
   readFromFile.c
-  student.c
-  teacher.c
+D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\readFromFile\readFromFile.c(60,53): warning C4013: 'strlen' undefined; assuming extern returning int
   Generating Code...
-D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\teacher.c(67,41): warning C4047: '<': 'int' differs in levels of indirection from 'int (__cdecl *)(p_list_t)'
-D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\linked_list.c(96): warning C4715: 'search': not all control paths return a value
-D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\linked_list.c(112): warning C4715: 'get_before': not all control paths return a value
-D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\linked_list.c(184): warning C4715: 'get_element_from_list': not all control paths return a value
+D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\readFromFile\readFromFile.c(61,10): warning C4013: 'strcpy' undefined; assuming extern returning int
   ESW_Assignment.vcxproj -> D:\Skola\HighSchool\sem4\ESW_C\Assignment\ESW_ASSIGNMENT\x64\Debug\ESW_Assignment.exe

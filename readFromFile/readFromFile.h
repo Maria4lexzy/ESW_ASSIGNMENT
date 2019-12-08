@@ -5,6 +5,6 @@
 #ifndef ESW_ASSIGNMENT_READFROMFILE_H
 #define ESW_ASSIGNMENT_READFROMFILE_H
 
-void read_from_file(char *filename);
+void read_data_from_file(char *filename);
 
 #endif //ESW_ASSIGNMENT_READFROMFILE_H
