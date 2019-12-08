@@ -1,19 +1,27 @@
 #pragma once
-#include "stdint.h"
-#include "student.h"
-#include "student_list.h"
-typedef struct course_t {
-	p_student_list_node  students;
-	int course_num;
-	char* course_name;
-	int semester_num;
-	
-} course_t;
-typedef struct course_t* pcourse_t;
 
-pcourse_t create_course(int course_num, char* course_name, int semester_no);
-void destroy_course(pcourse_t course);
-int get_course_num(course_t course);
-char* get_course_name(course_t course);
-int get_semester_num(course_t course);
-void print_course_info(pcourse_t course);
+#include "linked_list.h"
+
+typedef struct course_t* p_course_t;
+
+typedef struct course_t {
+	//C course_number course_name semester_number
+	int course_no;
+	char* course_name;
+	int semester_no;
+}course_t;
+
+course_t* createCourse(int course_no, char* course_name, int semester_no);
+void destroyCourse(course_t* course);
+void setCourseNo(course_t* course, int course_no);
+void setCourseName(course_t* course, char* course_name);
+void setSemesterNo(course_t* course, int semester_no);
+int getCourseNo(course_t* course);
+char* getCourseName(course_t* course);
+int getSemesterNo(course_t* course);
+void print_Course_Information(course_t* course);
+p_list_t create_course_list();
+void remove_course_from_list(p_course_t course);
+course_t* get_course_from_list(int course_no);
+void add_course_to_list(p_course_t course);
+p_list_t get_course_list();

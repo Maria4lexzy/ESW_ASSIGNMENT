@@ -1,27 +1,64 @@
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "linked_list.h"
 #include "assignment.h"
-#include <malloc.h>
-#include "stdint.h"
 #include "course.h"
 #include "teacher.h"
 
-passignment_t create_assignment(pcourse_t course, pteacher_t teacher) 
-{ 
-	return *((passignment_t*)0);
-}
-void destroy_assignment(passignment_t assignment){}
-void set_assignment_course(passignment_t assignment, pcourse_t course){}
-void set_assignment_teacher(passignment_t assignment, pteacher_t teacher){}
-pcourse_t get_assignment_course(passignment_t assignment) 
-{
-	return NULL;
-}
-pteacher_t get_assignment_teacher(passignment_t assignment) {
-	return NULL;
-	
-}
-void print_assignment_info(passignment_t assignment){
-	//printf("A \t %d\t %d\n", assignment->teacher->teacher_num ,assignment->course->course_num);
+
+static p_list_t assignment_list;
+
+p_list_t create_assignment_list() {
+	assignment_list = linked_list_create();
+	return assignment_list;
 }
 
+assignment_t* createAssignment(course_t* course, teacher_t* teacher) {
+	assignment_t* assignment = (assignment_t*)malloc(sizeof(assignment_t));
+	if (assignment == NULL) {
+		return NULL;
+	}
+	else
+	{
+		assignment->course = course;
+		assignment->teacher = teacher;
+		return assignment;
+	}
+}
 
+void destroyAssignment(assignment_t* assignment) {
+	free(assignment);
+	assignment = NULL;
+}
+void setAssignmentCourse(assignment_t* assignment, course_t* course) {
+	assignment->course = course;
+}
+void setAssignmentTeacher(assignment_t* assignment, teacher_t* teacher) {
+	assignment->teacher = teacher;
+}
+
+course_t* getAssignmentCourse(assignment_t* assignment) {
+	return assignment->course;
+}
+teacher_t* getAssignmentTeacher(assignment_t* assignment) {
+	return assignment->teacher;
+}
+void printAssignmentInformation(assignment_t* assignment) {
+	printf("A \t %d\t %d\n", assignment->teacher->teacher_no, assignment->course->course_no);
+}
+
+void add_assignment_to_list(p_assignment_t assignment) {
+	if (assignment_list == NULL) {
+		assignment_list = create_assignment_list();
+	}
+	add_item_to_list(assignment_list, assignment);
+}
+
+void remove_assignment_from_list(p_assignment_t assignment) {
+	remove_item_from_list(assignment_list, assignment);
+}
+
+p_list_t get_assignment_list() {
+	return assignment_list;
+}
